@@ -1,0 +1,9 @@
+.text # Seção de código (instruções)
+.globl main # Declara o ponto de entrada global
+main:
+ addi x1, x0, 5 # x1 = 0 + 5 -> x1 recebe 5
+ addi x2, x0, 7 # x2 = 0 + 7 -> x2 recebe 7
+ add x3, x1, x2 # x3 = x1 + x2 -> x3 recebe 12 (0x0C em hexadecimal)
+ # Finaliza a execução do programa de forma limpa (System Call de Saída)
+ addi a7, x0, 10 # Configura o código do serviço de saída (10) no registrador a7
+ ecall # Chama o ambiente/sistema operacional para encerrar
